@@ -36,5 +36,5 @@ probabilities = [dist.pdf(value) for value in values]
 #pypplot.show()
 
 plt.hist(varNew, bins=100, density=(True))
-plt.plot()
+#plt.plot()
 plt.show()
