@@ -260,7 +260,7 @@ def writeProximityEvents(proxEventsDict, filename):
             values = [id1, id2, event[1], event[0][0], event[0][1]]
             line = '\t'.join(("%s" % (v,)) for v in values)
             outfile.write('%s\n' % line)
-
+          
 
 def createCellTowerDataset(idDictionaries):
    idDict, macDict, hashNumDict = idDictionaries
@@ -272,8 +272,8 @@ def createCellTowerDataset(idDictionaries):
    proximityEvents = dict(((i, j), listProximityEvents(cellTowerIntervals[i], cellTowerIntervals[j]))
          for i,j in itertools.combinations(cellTowerIntervals.keys(), 2))
 
-   print("Writing proximity events to reality-mining-proximity.txt")
-   writeProximityEvents(proximityEvents, 'reality-mining-proximity.txt')
+   print("Writing proximity events to reality-mining-proximity.csv")
+   writeProximityEvents(proximityEvents, 'reality-mining-proximity.csv')
 
 
 if __name__ == "__main__":
@@ -286,8 +286,8 @@ if __name__ == "__main__":
    subjects = validSubjects(matlab_obj['s'][0])
    idDictionaries = idDicts(subjects)
 
-   createFriendshipDataset(matlab_obj['network'][0][0], idDictionaries)
+   #createFriendshipDataset(matlab_obj['network'][0][0], idDictionaries)
    #createPhoneCallDataset(idDictionaries)
-   #createCellTowerDataset(idDictionaries)
+   createCellTowerDataset(idDictionaries)
 
    print("Cleaning up...")
