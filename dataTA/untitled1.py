@@ -10,13 +10,19 @@ import datetime as dt # datetime module
 import matplotlib.pyplot as plt # plotting
 from scipy.spatial.distance import pdist, squareform
 import os 
-"""for dirname, _, filenames in os.walk('D:/TA_185314080/learningPython/dataTA'):
-    for filename in filenames:
-        print(os.path.join(dirname, filename))
-x = pd.read_csv("reality-mining-proximity.csv")
-x.head()"""
-read_file = pd.read_table('reality-mining-proximity.csv')
-df = pd.DataFrame(read_file)
+
+read_file = pd.read_table('reality-mining-proximity.csv') #read csv file
+df = pd.DataFrame(read_file) # read csv to dataframe
+df['start'] = df['start'].astype('datetime64[ns]') # change start type from object to datetime
+df['end'] = df['end'].astype('datetime64[ns]') # change end type from object to datetime
+
+df.insert(5, "interval", True)
+df["interval"] = df["end"] - df["start"]
+
+#df.to_csv('proximity-data.csv', index=False, encoding='utf-8')
+
+
+
 print(df)
 #df['start'] = pd.to_datetime(df['start'], format())
 #print(df['start'])
@@ -24,8 +30,8 @@ print(df)
 #desc = df["start"].describe()
 #desc = df["id1"].describe()
 #print(desc)
-
-print(df.info())
+print(df["interval"].isna().sum())
+#print(df.info())
 
 
 
