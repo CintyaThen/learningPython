@@ -16,10 +16,10 @@ df = pd.DataFrame(read_file) # read csv to dataframe
 df['start'] = df['start'].astype('datetime64[ns]') # change start type from object to datetime
 df['end'] = df['end'].astype('datetime64[ns]') # change end type from object to datetime
 
-df.insert(5, "interval", True)
-df["interval"] = df["end"] - df["start"]
+#df.insert(5, "interval", True)
+#df["interval"] = df["end"] - df["start"]
 
-#df.to_csv('proximity-data.csv', index=False, encoding='utf-8')
+df.to_csv('proximity-data_asli.csv', index=False, encoding='utf-8')
 
 
 
