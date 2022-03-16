@@ -10,10 +10,18 @@ import pandas as pd
 from datetime import datetime, timedelta
 
 
-"""read_file = pd.read_csv('proximity-data_asliiii.csv')
+
+read_file = pd.read_csv('proximity-data_asliiii.csv')
 df = pd.DataFrame(read_file)
 
-#df = df.sort_values(by="start")
+#ind = pd.date_range(df["start"].min(), df["end"].max(), freq ='6H')
+my_timelist = [pd.date_range(df["start"].min(),df["end"].max(), freq ='6H')]
+my_list = []
+for n in my_timelist:
+    my_list.append(df.n*n)
+print(my_timelist)
+
+"""#df = df.sort_values(by="start")
 #sortData = df[["end", "cellTower","id1","id2"]]
 #min_datetime = df.["start"].
 #print(df["interval"].isna().sum())
@@ -57,6 +65,6 @@ diff_in_hours = diff.total_seconds() / 3600
 print('Difference between two datetimes in hours:')
 print(diff_in_hours)"""
 
-ind = pd.date_range('19-7-2004 6:00:00.0', periods = 1355, freq ='6H')
+#ind = pd.date_range('19-7-2004 6:00:00.0', periods = 1355, freq ='6H')
 
-print(ind)
+#print(ind)
