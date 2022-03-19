@@ -15,7 +15,7 @@ from sklearn.metrics import classification_report
 
 #import Dataset
 def importdata():
-    balance_data = pd.read_file("reality-mining-survey.txt")
+    balance_data = pd.read_("reality-mining-survey.txt")
     
     #printing Dataset Shape
     print ("Dataset length: ", len(balance_data))
@@ -26,14 +26,14 @@ def importdata():
     return balance_data
 
 #Function split dataset
-#def splitDataset(balance_data):
+def splitDataset(balance_data):
     
     #separating the target variable
-   # X = balance_data.values[:, 1:5]
-  #  Y = balance_data.values[:, 0]
+    X = balance_data.values[:, 1:5]
+    Y = balance_data.values[:, 0]
     
     #Splitting the Dataset into train and test
- #   x_train, x_test, y_train, y_test = train_test_split(X,Y,test_size)*/
+    x_train, x_test, y_train, y_test = train_test_split(X,Y,test_size=0.3, random_state= 100)
 
 def main():
     data = importdata()
