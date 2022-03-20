@@ -11,18 +11,22 @@ from datetime import datetime, timedelta
 
 
 
-read_file = pd.read_csv('proximity-data_asliiii.csv')
+read_file = pd.read_csv('data_olah.csv')
 df = pd.DataFrame(read_file)
 
 #ind = pd.date_range(df["start"].min(), df["end"].max(), freq ='6H')
-my_timelist = [pd.date_range(df["start"].min(),df["end"].max(), freq ='6H')]
-my_list = []
-for n in my_timelist:
-    my_list.append(df.n*n)
-print(my_timelist)
+#my_timelist = [pd.date_range(df["start"].min(),df["end"].max(), freq ='6H')]
+#df['id_column'] = df[df.columns[3:4]].apply(lambda x:','.join(x.dropna()),axis=1)
+#print(my_timelist)
+#df["id_colums"] = df["id1"].astype(str)+','+df["id2"].astype(str)
+print(df.info())
+print(df)
+#def datetime_interval (w1, w2):
+  #  start1, end1 = w1
+    
 
 """#df = df.sort_values(by="start")
-#sortData = df[["end", "cellTower","id1","id2"]]
+
 #min_datetime = df.["start"].
 #print(df["interval"].isna().sum())
 date1 = df["start"].min()
@@ -31,8 +35,9 @@ start = datetime(date1)
 end = datetime(date2)
 interval = end - start
 print(df["start"].info())
-#print(interval)
-#sortData.to_csv('proximity-data_asliiii.csv',  encoding='utf-8')"""
+#print(interval)"""
+#sortData = df[["start","end","cellTower", "id_colums"]]
+#sortData.to_csv('data_olah.csv',  encoding='utf-8', index=False)
 
 """s = pd.Series(["A", "B", "C", "D", "E"], index=pd.date_range("2000-01-01", periods=5, freq="6h"))
 print(s)
