@@ -21,9 +21,7 @@ df = pd.DataFrame(read_file)
 #df["id_colums"] = df["id1"].astype(str)+','+df["id2"].astype(str)
 print(df.info())
 print(df)
-#def datetime_interval (w1, w2):
-  #  start1, end1 = w1
-    
+
 
 """#df = df.sort_values(by="start")
 
