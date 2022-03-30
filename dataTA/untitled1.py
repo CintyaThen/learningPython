@@ -1,12 +1,55 @@
 # -*- coding: utf-8 -*-
 """
-Created on Wed Mar 30 13:40:53 2022
+Created on Thu Feb 10 11:53:43 2022
 
 @author: WINDOWS_X
 """
+
 import pandas as pd # data processing
-read_file = pd.read_csv('areaid.csv')
-df = pd.DataFrame(read_file)
-#df.insert(1,"location",True)
-valueid = df['area id unique'].replace(['11'],'104')
+import datetime as dt # datetime module
+import matplotlib.pyplot as plt # plotting
+from scipy.spatial.distance import pdist, squareform
+import os 
+
+read_file = pd.read_table('reality-mining-proximity.csv') #read csv file
+df = pd.DataFrame(read_file) # read csv to dataframe
+
+df['start'] = df['start'].astype('datetime64[ns]') # change start type from object to datetime
+df['end'] = df['end'].astype('datetime64[ns]') # change end type from object to datetime
+
+"""df.insert(5, "time", True)
+temp = pd.PeriodIndex(start ='2004-07-26 00:00:00', end='2005-05-05', freq='6h')
+df["time"] = temp
+"""
+df.to_csv('proximity-data_asli.csv', index=False, encoding='utf-8')
+
+
+
 print(df)
+#df['start'] = pd.to_datetime(df['start'], format())
+#print(df['start'])
+#print(list(df.columns))
+#desc = df["start"].describe()
+#desc = df["id1"].describe()
+#print(desc)
+#print(df["interval"].isna().sum())
+#print(df.info())
+
+
+
+
+
+
+
+
+#df.head()
+#print(df.to_string())
+
+#row_labels = [']
+#df.index = row_labels
+
+#x1 = df.brics.loc["Mean"]
+#print(x1)
+#airwise_dists = squareform(pdist(df, 'euclidean'))
+# =
+# = scip.exp(-pairwise_dists ** 2 / s ** 2)
