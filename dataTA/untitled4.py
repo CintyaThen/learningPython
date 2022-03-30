@@ -29,4 +29,6 @@ for key,value in df.iterrows():
 index=range(1,len(df2)+1) 
 
 df2.set_index(pd.Index(index),'index',inplace=True)
+df3=pd.DataFrame(columns=['mulai','akhir','spe','hariandes'])
 print(df2)
+ 
