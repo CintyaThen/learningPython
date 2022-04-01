@@ -14,29 +14,30 @@ import os
 read_file = pd.read_table('reality-mining-proximity.csv') #read csv file
 df = pd.DataFrame(read_file) # read csv to dataframe
 
-df['start'] = df['start'].astype('datetime64[ns]') # change start type from object to datetime
-df['end'] = df['end'].astype('datetime64[ns]') # change end type from object to datetime
 
-"""df.insert(5, "time", True)
-temp = pd.PeriodIndex(start ='2004-07-26 00:00:00', end='2005-05-05', freq='6h')
-df["time"] = temp
-"""
-df.to_csv('proximity-data_asli.csv', index=False, encoding='utf-8')
+#df.to_csv('proximity-data_asli.csv', index=False, encoding='utf-8')
+#def locationInfo (areaId, idPair):
+    
 
 
 
 print(df)
-#df['start'] = pd.to_datetime(df['start'], format())
+"""#df['start'] = pd.to_datetime(df['start'], format())
 #print(df['start'])
 #print(list(df.columns))
 #desc = df["start"].describe()
 #desc = df["id1"].describe()
 #print(desc)
 #print(df["interval"].isna().sum())
-#print(df.info())
+#print(df.info())"""
 
+"""df['start'] = df['start'].astype('datetime64[ns]') # change start type from object to datetime
+df['end'] = df['end'].astype('datetime64[ns]') # change end type from object to datetime
 
-
+df.insert(5, "time", True)
+temp = pd.PeriodIndex(start ='2004-07-26 00:00:00', end='2005-05-05', freq='6h')
+df["time"] = temp""
+"""
 
 
 
