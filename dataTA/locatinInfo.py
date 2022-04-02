@@ -11,5 +11,7 @@ df = pd.DataFrame(read_file)
 #temp1 = df['start'].min()
 #temp2 = df['end'].max()
 df1 =  df[["start","end"]]
+df1['startNew'] = [pd.date_range(df1["start"].min(),df1["end"].max(), freq ='6H')]
+
 print(df1)
 
