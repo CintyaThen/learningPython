@@ -17,7 +17,7 @@ df = pd.DataFrame(df)
 df = df.groupby([df.index.floor("6H"), "id_colums"]).agg({'area id': lambda x: list(set(x))})
 #print(df)
 
-df.to_csv('locationInfo.csv',  encoding='utf-8')"""
+"""
 """
 df = df.groupby([df.index.floor("6H"), "id_colums"]).agg({'area id': lambda x: list(x)})
 
@@ -26,7 +26,10 @@ df = pd.DataFrame(df)
 
 print(df.head())"""
 df = pd.read_csv("locationInfo.csv")
-#df = pd.DataFrame(df)
-#multi = df.set_index(['start','id_colums','area id'])
-newdf = pd.pivot_table(df,                             index=['start', 'id_colums'], columns='area id')
-print(newdf)
+df = pd.DataFrame(df)
+df = df.set_index(['start','id_colums'])
+
+
+
+#print(df)
+df.to_csv('locationInfo.csv',  encoding='utf-8')
