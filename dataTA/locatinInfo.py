@@ -6,6 +6,7 @@ Created on Fri Apr  1 13:57:24 2022
 """
 
 import pandas as pd # data processing
+import numpy as np
 #import sysmpy as sy
 """
 Slice data and list of area id
@@ -25,11 +26,18 @@ df = pd.read_csv("locationInfo.csv")
 df = pd.DataFrame(df)
 
 print(df.head())"""
-df = pd.read_csv("locationInfo.csv")
+df = pd.read_csv("locationInfo.csv", usecols=['area id'])
 df = pd.DataFrame(df)
-df = df.set_index(['start','id_colums'])
+#df = df.set_index(['start','id_colums'])
 
-
-
-#print(df)
-df.to_csv('locationInfo.csv',  encoding='utf-8')
+#def sumList(row):
+#    return sum(listRow)
+#s = [str (i) for i in df['area id']]
+#res = str(" ".join(s))
+#print(res)
+#suml  = df['area id'].to_numpy()
+#df["sum"] = sum(suml)
+#df['area id'] = df['area id'].astype(str).astype(int)
+res = np.sum(df['area id'].iloc[1])
+print(res)
+#df.to_csv('locationInfo.csv',       encoding='utf-8')
