@@ -287,7 +287,7 @@ if __name__ == "__main__":
    idDictionaries = idDicts(subjects)
 
    #createFriendshipDataset(matlab_obj['network'][0][0], idDictionaries)
-   #createPhoneCallDataset(idDictionaries)
-   createCellTowerDataset(idDictionaries)
+   createPhoneCallDataset(idDictionaries)
+   #createCellTowerDataset(idDictionaries)
 
    print("Cleaning up...")
